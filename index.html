@@ -1,4 +1,24 @@
 <!DOCTYPE html>
 <html>
-
+  <head>
+    <style>
+      #top_bun, #bottom_bun {
+        background-color:beige;
+        width:100%;
+        height:100px;
+      }
+    </style>
+    <title>Make A Burger</title>
+  </head>
+  
+  <body onload="load()">
+    <div id="top_bun></div>
+    <div id="bottom_bun></div>
+    
+    <script>
+      function load(){
+        var user_input = window.prompt("How Many Toppings (including condiments):");
+      }
+    </script>
+  </body>
 </html>
