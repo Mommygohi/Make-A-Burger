@@ -28,6 +28,11 @@
   <body onload="load()">
     <center id="everything">
       <div id="top_bun"></div><br>
+      
+      <div id="placehere">
+        
+      </div>
+      
       <div id="bottom_bun"></div>
     </center>
       
@@ -35,8 +40,11 @@
       function load(){
         var user_input = window.prompt("How Many Toppings (including condiments):");
         for(var i = 0; i < user_input; i++){
-          var element = document.createElement("div");
-          document.getElementById(everything).insertBefore(element, "bottom_bun");
+          var elem = document.createElement("div");
+          elem.setAttribute("height", "200px");
+          elem.setAttribute("id", "lettuce");
+          document.getElementById("placehere").appendChild(elem);
+          document.getElementById("placehere").innerHTML += "<br>";
         }
       }
     </script>
