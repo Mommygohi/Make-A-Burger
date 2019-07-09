@@ -34,6 +34,10 @@
     <script>
       function load(){
         var user_input = window.prompt("How Many Toppings (including condiments):");
+        for(var i = 0; i < user_input; i++){
+          var element = document.createElement("div");
+          document.getElementById(everything).insertBefore(element, "bottom_bun");
+        }
       }
     </script>
   </body>
