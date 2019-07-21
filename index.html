@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin:0px;
+      }
+
+      #top_bun, #bottom_bun {
+        background-color:#deb887;
+        height:200px;
+      }
+
+      #patty {
+        background-image:url("Images/patty.jpg");
+        height:50px;
+      }
+
+      #cheese_patty {
+        background-image:linear-gradient(to top, #422304 80%, #fd941f 20%);
+        height:100px;
+      }
+
+      #lettuce {
+        background-image:url("Images/lettuce.jpg");
+        height:50px;
+      }
+
+      #tomatos {
+        background-image:url("Images/tomatos.jpg");
+        height:50px;
+      }
+
+      #pickles {
+        background-image:url("Images/pickles.jpg");
+        height:50px;
+      }
+
+      #onions {
+        background-image:url("Images/onions.png");
+        height:50px;
+      }
+
+      #mushrooms {
+        background-image:url("Images/mushrooms.jpg");
+        height:50px;
+      }
+
+      #ketchup {
+        background-image:url("Images/ketchup.jpg");
+        height:15px;
+      }
+
+      #mustard {
+        background-image:url("Images/mustard.jpg");
+        height:15px;
+      }
+
+      #bacon {
+        background-image:url("Images/bacon.jpg");
+        height:50px;
+      }
+
+      #bbq {
+        background-image:url("Images/bbq.jpg");
+        height:50px
+      }
+
+      table {
+        border:2px solid black;
+        border-top:1px solid black;
+        border-left:1px solid black;
+        border-spacing:0px;
+        margin-top:50px;
+        width:50%;
+      }
+
+      th, td {
+        border-top:1px solid black;
+        border-left:1px solid black;
+        text-align:center;
+        width:12.5%;
+      }
+    </style>
+    <title>Make A Burger</title>
+  </head>
+
+  <body onload="load()">
+    <center id="everything">
+      <div id="top_bun"></div>
+
+      <div id="placehere">
+
+      </div>
+
+      <div id="patty"></div>
+      <div id="bottom_bun"></div>
+    </center>
+
+    <center>
+      <table>
+        <tr>
+          <th colspan="8">Toppings you could have chosen</th>
+        </tr>
+        <tr>
+          <td>Lettuce</td>
+          <td><img src="Images/lettuce.jpg" width="100px" height="100px" alt="Image of lettuce"></td>
+          <td>Tomatos</td>
+          <td><img src="Images/tomatos.jpg" width="100px" height="100px" alt="Image of tomatos"></td>
+          <td>Onions</td>
+          <td><img src="Images/onions.png" width="100px" height="100px" alt="Image of onions"></td>
+          <td>Pickles</td>
+          <td><img src="Images/pickles.jpg" width="100px" height="100px" alt="Image of pickles"></td>
+        </tr>
+        <tr>
+          <td>Mushrooms</td>
+          <td><img src="Images/mushrooms.jpg" width="100px" height="100px" alt="Image of mushrooms"></td>
+          <td>Ketchup</td>
+          <td><img src="Images/ketchup.jpg" width="100px" height="100px" alt="Image of ketchup"></td>
+          <td>Mustard</td>
+          <td><img src="Images/mustard.jpg" width="100px" height="100px" alt="Image of lettuce"></td>
+          <td>Bacon</td>
+          <td><img src="Images/bacon.jpg" width="100px" height="100px" alt="Image of bacon"></td>
+        </tr>
+        <tr>
+          <td>BBQ Sauce (type bbq)</td>
+          <td><img src="Images/bbq.jpg" width="100px" height="100px" alt="Image of BBQ Sauce"></td>
+          <td>Empty</td>
+          <td><img src="Images/.jpg" width="100px" height="100px" alt="Image of nothing"></td>
+          <td>Empty</td>
+          <td><img src="Images/.jpg" width="100px" height="100px" alt="Image of nothing"></td>
+          <td>Empty</td>
+          <td><img src="Images/.jpg" width="100px" height="100px" alt="Image of nothing"></td>
+        </tr>
+      </table>
+    </center>
+
+    <script>
+      function load(){
+        //Asks for number of toppings and creates empty toppings divs
+        var num_toppings = window.prompt("How Many Toppings (including condiments):");
+        for(var i = 0; i < num_toppings; i++){
+          var elem = document.createElement("div");
+          elem.setAttribute("height", "200px");
+          elem.setAttribute("id", "topping" + (i + 1));
+          document.getElementById("placehere").appendChild(elem);
+        }
+
+        //Asks for each topping and makes an empty toppings div that topping
+        for(var j = 0; j < num_toppings; j++){
+          var id = "topping" + (j + 1);
+          var user_input = window.prompt("What is topping #" + (j + 1) + ":");
+          document.getElementById(id).id = user_input;
+        }
+
+        //Asks if the user wants cheese on their burger
+        var cheeseBurger = window.prompt("Do you want cheese on that:");
+        if(cheeseBurger.toLowerCase() == "yes"){
+          document.getElementById("patty").id = "cheese_patty";
+        }
+      }
+    </script>
+  </body>
+</html>
